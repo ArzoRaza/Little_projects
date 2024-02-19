@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Dynamic List Example</title>
+</head>
+<body>
+  <button id="add-button">Add Item</button>
+  <ol id="list"></ol>
+
+  <script>
+    // Pre-existing array of list items
+    const items = [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Angular",
+      "Vue.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "SQL"
+    ];
+
+    // Button click event handler
+    document.getElementById("add-button").addEventListener("click", () => {
+      // Check if any remaining items are available in the array
+      if (items.length > 0) {
+        // Add the next item to the list
+        const list = document.getElementById("list");
+        const newListItem = document.createElement("li");
+        newListItem.textContent = items.shift(); // Remove the first item from the array
+        list.appendChild(newListItem);
+      } else {
+        // Display a message indicating that all items have been added
+        alert("All items have been added!");
+      }
+    });
+  </script>
+</body>
+</html>
